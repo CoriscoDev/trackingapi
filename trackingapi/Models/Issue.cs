@@ -11,7 +11,12 @@ namespace trackingapi.Models
         public string Description { get; set; }
         public Priority Priority { get; set; }
         public IssueType IssueType { get; set; }
-        public DateTime Created { get; set; }
+        private DateTime _created;
+        public DateTime Created
+        {
+            get { return _created; }
+            set { _created = value ?? DateTime.Now; }
+        }
         public DateTime? Completed { get; set; }
     }
 
