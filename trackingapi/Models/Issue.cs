@@ -12,7 +12,7 @@ namespace trackingapi.Models
         public Priority Priority { get; set; }
         public IssueType IssueType { get; set; }
         private DateTime _created;
-        public DateTime Created
+        public DateTime? Created
         {
             get { return _created; }
             set { _created = value ?? DateTime.Now; }
@@ -20,7 +20,7 @@ namespace trackingapi.Models
         public DateTime? Completed { get; set; }
     }
 
-    public enum Priority 
+    public enum Priority
     {
         Low, Medium, High
     }
