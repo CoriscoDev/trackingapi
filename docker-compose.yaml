@@ -1,0 +1,15 @@
+services:
+  trackingapi:
+    container_name: TrackingApi
+    image: tracking-api:latest
+    build:
+      context: ./trackingapi/
+      dockerfile: Dockerfile
+    ports:
+      - "5121:5121"
+      - "7121:7121"
+    volumes:
+      - ./trackingapi/Db/:/app/Db
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5121;http://+:7121;
